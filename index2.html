@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* Common Section */
+        section {
+            padding: 70px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #0284c7;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+        /* Home */
+        .home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .home-text {
+            max-width: 500px;
+        }
+
+        .home-text h2 {
+            text-align: left;
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .home-text h2 span {
+            color: #0284c7;
+        }
+
+        .home-text p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Photo */
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 7px solid #0284c7;
+            box-shadow: 0 5px 20px #aaa;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #0284c7;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+        }
+
+        /* About */
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Education */
+        .education {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #0284c7;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .education-card h3 {
+            color: #0284c7;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            margin: 6px 0;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px #ccc;
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        .project img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project h3 {
+            color: #0284c7;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            line-height: 1.6;
+        }
+
+        /* Certificates */
+        .certificates {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .certificate {
+            background: white;
+            width: 320px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #ccc;
+            text-align: center;
+        }
+
+        .certificate img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        .certificate h3 {
+            color: #0284c7;
+            margin-top: 12px;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .home {
+                text-align: center;
+            }
+
+            .home-text h2 {
+                text-align: center;
+                font-size: 32px;
+            }
+
+            .profile-photo {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME -->
+    <section class="home" id="home">
+
+        <div class="home-text">
+
+            <h2>Hello, I'm <span>Parkavi</span></h2>
+
+            <p>
+                Student | Web Developer | Programmer
+            </p>
+
+            <a href="#about" class="btn">
+                Know More
+            </a>
+
+        </div>
+
+
+        <!-- YOUR PHOTO -->
+        <img
+            src="profile photo.jpg"
+            alt="My Profile Photo"
+            class="profile-photo"
+        >
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am a passionate student interested in programming,
+                web development and emerging technologies. I enjoy
+                creating innovative projects and learning new
+                technical skills.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education">
+
+            <div class="education-card">
+
+                <h3>B.E - Electronics and communication Engineering</h3>
+
+                <p>
+                    <strong>College:</strong>
+                    Vivekanadha College of Engineering for women
+                </p>
+
+                <p>
+                    <strong>Year:</strong>
+                    2024 - 2028
+                </p>
+
+                <p>
+                    <strong>CGPA:</strong>
+                    7.7 / 10
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>12th</h3>
+
+                <p>
+                    <strong>School:</strong>
+                    P.A.Vidhya Bhavan Higher Secondary School
+                </p>
+
+                <p>
+                    <strong>Percentage:</strong>
+                    70%
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>10th</h3>
+
+                <p>
+                    <strong>School:</strong>
+                    Oxford Matriculation School
+                </p>
+
+                <p>
+                    <strong>Percentage:</strong>
+                    75%
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C Programming</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2>My Projects</h2>
+
+        <div class="projects">
+
+            <!-- Project 1 -->
+            <div class="project">
+
+                <div class="project-content">
+
+                    <h3>
+                        Vehicle-to-Vehicle Communication using lifi technology
+                    </h3>
+
+                    <p>
+                        A project based on Li-Fi technology that
+                        enables vehicles to communicate using
+                        LED light signals.
+                    </p>
+
+                </div>
+
+            </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact">
+
+            <p>
+                <strong>Email:</strong>
+                parkavikanagaraj2007@gmail.com
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                +91 7092690767
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Tamil Nadu, India
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Parkavi| My Portfolio
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
